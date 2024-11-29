@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR GALLERY</title>
+    <style>
+        /* Reset dan Font */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #fefcea, #f1da36);
+            color: #fff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: url('image/bg8.jpg') repeat;
+            overflow-x: hidden;
+        }
+
+        /* Latar Belakang Lampu Strobo */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 204, 0, 0.6));
+            mix-blend-mode: screen;
+            z-index: -1;
+            animation: strobe 2s infinite;
+        }
+
+        @keyframes strobe {
+            0%, 100% {
+                background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 204, 0, 0.6));
+            }
+            50% {
+                background: linear-gradient(120deg, rgba(255, 204, 0, 0.6), rgba(255, 255, 255, 0.6));
+            }
+        }
+
+        /* Judul */
+        .hero {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fade-in 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            animation: sirene 1s infinite alternate;
+        }
+
+        @keyframes sirene {
+            0% { color: #ffdd00; }
+            100% { color: #ffffff; }
+        }
+
+        /* Galeri Foto */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            border: 4px solid #000;
+            border-image: linear-gradient(45deg, #000, #ffdd00) 1;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            animation: zoom-in 1.5s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff8000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #ff8000;
+        }
+
+        .close-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Tombol Kembali */
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .back-button {
+            background-color: #ff8000;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid #fff;
+            animation: glow 1.5s infinite alternate;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 128, 0, 0.8);
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px #ff8000, 0 0 20px #ff8000, 0 0 30px #ff8000;
+            }
+            50% {
+                box-shadow: 0 0 20px #ff8000, 0 0 40px #ff8000, 0 0 50px #ff8000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Latar Belakang Hero -->
+    <div class="hero">
+        <h1>OUR GALLERY</h1>
+    </div>
+
+    <!-- Galeri Foto Kenangan -->
+    <div class="gallery">
+        <!-- 15 Foto -->
+        <div class="gallery-item">
+            <a href="#lightbox1">
+                <img src="image/galery1.jpg" alt="Kenangan 1">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox2">
+                <img src="image/galery2.jpg" alt="Kenangan 2">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox3">
+                <img src="image/galery3.jpg" alt="Kenangan 3">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox4">
+                <img src="image/galery44.jpg" alt="Kenangan 4">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox5">
+                <img src="image/galery5.jpg" alt="Kenangan 5">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox6">
+                <img src="image/galeri6.jpg" alt="Kenangan 6">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox7">
+                <img src="image/galery7.jpg" alt="Kenangan 7">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox8">
+                <img src="image/galery8.jpg" alt="Kenangan 8">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox9">
+                <img src="image/galery9.jpg" alt="Kenangan 9">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox10">
+                <img src="image/galery10.jpg" alt="Kenangan 10">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox11">
+                <img src="image/galery11.jpg" alt="Kenangan 11">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox12">
+                <img src="image/galery12.jpg" alt="Kenangan 12">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox13">
+                <img src="image/galery13.jpg" alt="Kenangan 13">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox14">
+                <img src="image/galery14.jpg" alt="Kenangan 14">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox15">
+                <img src="image/galery15.jpg" alt="Kenangan 15">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="#lightbox16">
+                <img src="image/galery16.jpg" alt="Kenangan 15">
+            </a>
+        </div> <div class="gallery-item">
+            <a href="#lightbox17">
+                <img src="image/galery17.jpg" alt="Kenangan 15">
+            </a>
+        </div> <div class="gallery-item">
+            <a href="#lightbox18">
+                <img src="image/galery18.jpg" alt="Kenangan 15">
+            </a>
+        </div> <div class="gallery-item">
+            <a href="#lightbox19">
+                <img src="image/galery19.jpg" alt="Kenangan 15">
+            </a>
+        </div> <div class="gallery-item">
+            <a href="#lightbox20">
+                <img src="image/galery20.jpg" alt="Kenangan 15">
+            </a>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox1" class="lightbox">
+            <img src="image/galery1.jpg" alt="Kenangan 1">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox2" class="lightbox">
+            <img src="image/galery2.jpg" alt="Kenangan 2">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox3" class="lightbox">
+            <img src="image/galery3.jpg" alt="Kenangan 3">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox4" class="lightbox">
+            <img src="image/galery44.jpg" alt="Kenangan 4">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox5" class="lightbox">
+            <img src="image/galery5.jpg" alt="Kenangan 5">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox6" class="lightbox">
+            <img src="image/galeri6.jpg" alt="Kenangan 6">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox7" class="lightbox">
+            <img src="image/galery7.jpg" alt="Kenangan 7">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox8" class="lightbox">
+            <img src="image/galery8.jpg" alt="Kenangan 8">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox9" class="lightbox">
+            <img src="image/galery9.jpg" alt="Kenangan 9">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox10" class="lightbox">
+            <img src="image/galery10.jpg" alt="Kenangan 10">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox11" class="lightbox">
+            <img src="image/galery11.jpg" alt="Kenangan 11">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox12" class="lightbox">
+            <img src="image/galery12.jpg" alt="Kenangan 12">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox13" class="lightbox">
+            <img src="image/galery13.jpg" alt="Kenangan 13">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox14" class="lightbox">
+            <img src="image/galery14.jpg" alt="Kenangan 14">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox15" class="lightbox">
+            <img src="image/galery15.jpg" alt="Kenangan 15">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+        <div id="lightbox16" class="lightbox">
+            <img src="image/galery16.jpg" alt="Kenangan 15">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div> 
+         <div id="lightbox17" class="lightbox">
+            <img src="image/galery17.jpg" alt="Kenangan 15">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div> 
+         <div id="lightbox18" class="lightbox">
+            <img src="image/galery18.jpg" alt="Kenangan 15">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div> 
+         <div id="lightbox19" class="lightbox">
+            <img src="image/galery19.jpg" alt="Kenangan 15">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div> 
+         <div id="lightbox20" class="lightbox">
+            <img src="image/galery20.jpg" alt="Kenangan 15">
+            <button class="close-btn" onclick="window.location.href='';">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Tombol Kembali -->
+    <div class="back-button-container">
+        <a href="index.html" class="back-button">back</a>
+    </div>
+</body>
+</html>

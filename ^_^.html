@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Sayang!</title>
+    <style>
+        /* Reset dan Font */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #000; /* Latar belakang hitam */
+            background: url('image/bghitam.jpg') repeat;
+            color: #ffcc00; /* Warna kuning */
+            overflow-x: hidden;
+        }
+
+        /* Foto Besar */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: url('police-theme.jpg') no-repeat center center/cover;
+            overflow: hidden;
+            animation: slide 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            color: #ffcc00;
+            text-align: center;
+            animation: fade-in 2s ease-in-out;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: pulse 2s infinite;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            animation: fade-in 3s ease-in-out;
+        }
+
+        /* Konten Utama */
+        .content {
+            padding: 20px;
+            text-align: center;
+            animation: slide-up 2s ease-out;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .content p {
+            line-height: 1.8;
+            margin: 0 auto;
+            max-width: 800px;
+            animation: move-left-right 5s ease-in-out infinite;
+        }
+
+        /* Tombol Back */
+        .back-button {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #000;
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            border: 2px solid #000;
+            cursor: pointer;
+            animation: glow 1.5s infinite;
+        }
+
+        .back-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Dekorasi Animasi */
+        .police-icons {
+            position: fixed;
+            bottom: -50px;
+            left: -50px;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .police-icons div {
+            position: absolute;
+            background: url('police-icon.png') no-repeat center/contain;
+            width: 50px;
+            height: 50px;
+            animation: float 5s infinite linear;
+        }
+
+        .police-icons div:nth-child(1) {
+            left: 20%;
+            animation-duration: 4s;
+        }
+
+        .police-icons div:nth-child(2) {
+            left: 50%;
+            animation-duration: 6s;
+        }
+
+        .police-icons div:nth-child(3) {
+            left: 80%;
+            animation-duration: 7s;
+        }
+
+        .police-icons div:nth-child(4) {
+            left: 10%;
+            animation-duration: 5s;
+        }
+
+        .police-icons div:nth-child(5) {
+            left: 70%;
+            animation-duration: 8s;
+        }
+
+        /* Animasi */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes slide-up {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-10%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+       
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+            }
+            50% {
+                box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00;
+            }
+        }
+
+   
+        
+    </style>
+</head>
+<body>
+    <!-- Foto Besar -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Selamat Ulang Tahun, Sayang! 🚓</h1>
+            <p>Baca ini sampai selesai yaaa ❤️</p>
+        </div>
+    </div>
+
+    <!-- Konten Teks Panjang -->
+    <div class="content">
+        <h2>Ia mau ngasi jawaban untuk salah satu pertanyaan yang mungkin selama ini belum pernah ia jawab dengan serius dan bikin abang jadi greget sama penasaran hehee..</h2>
+        <p>
+            Abang sering banget nanya ke ia, kenapa ia bisa suka sama abang, bisa sayang sama abang dan kenapa ia bisa yakin pilih abang. tapi ia selalu jawab dengan jawaban yang singkat dan mungkin kurang puas buat abang. 
+            sekarang ia coba jawab serius yaa. 
+        </p>
+        <p>
+            jujur aja, hal pertama yang ia nilai dari orang itu dari karakternya. menurut ia karakter lebih penting daripada fisik. ia suka abang yang punya karakter yang jarang dimiliki sama orang lain. ia liat abang itu orangnya lemah lembut, penyayang, terus peduli banget sama orang lain, suka merhatiin hal kecil, pekerja keras, suka ngerawat diri, bersih, terus bijak jugaaa hihihihihi. pokonya ia liat abang tu selalu berusaha biar semua orang yang deket sama abang itu ngerasa nyaman sama abang. 
+            semenjak kita chatan, ia uda ngerasa abang itu beda. abang ngasih perhatian dengan cara yang ga berlebihan tapi tulus, dan itu bikin ia nyaman. ia juga suka cara abang perhatiin ia, termasuk kalo ia salah. abang ga pernah negur ia dengan cara yang bikin sakit hati, tapi dengan cara yang bikin ia sadar dan ngerti. ga cuma negur, abang juga selalu nasihatin dan ingetin ia gimana caranya perbaiki diri ia. itu ia hargai banget karena ia tau abang peduli sama ia. ia ngerasa nyaman banget karena abang perhatian, sabar, pokonya sifat abang nunjukkin gimana dewasanya abang. dan yang paling penting, ia ngerasa abang itu pasangan yang bisa ngelengkapin semua kekurangan ia bangett. emang itu sih yang ia cari. abang ga cuma nerima ia apa adanya, dari sikap sama sifat ia, terus fisik ia, ataupun yang lainnya, tapi abang juga sering banget ingetin ia buat jadii lebih baik. dan yang ngebedain dari orang lain. ia suka gimana abang punya wawasan sama pemikiran yang cukup luas, ga cuma soal diri abang sendiri, tapi juga tentang hal-hal di sekitar abang. ia liat abang juga peduli banget sama orang. ia juga liat gimana sayangnya abang sama keluarga abang, abang selalu dengerin apa kata orang tua abang, selalu berusaha biar banggain mereka dan bikin mereka seneng terus gimanapun caranya. dan itu salah satu alesan kenapa ia kagum dan makin yakin sama abang. makanya ia pilih abang disaat ia punya banyak pilihan. itu yang ngebedain abang dari orang lain, ia suka. pokonya, i just love everything about you. itu kenapa setiap ia ditanya sama abang ia gapernah bisa jawab. ia bingung, masa ia harus jelasin semua hal yang ia suka dari abang, kan banyak bangettt huhuhuuuu. jadi, mulai sekarang stopppp nanya ke ia kenapa ia suka sama abang! kalo masih mau tau, baca lagi ini.🎉
+        </p>
+        <p>
+            Selamat ulang tahun, gantenggg. Tetep jadi abang yang ia kenal yaaa. 🚔❤️
+        </p>
+        <!-- Tombol Back -->
+        <a href="index.html" class="back-button">Back</a>
+    </div>
+
+    <!-- Dekorasi Animasi -->
+    <div class="police-icons">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

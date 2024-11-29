@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked to</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: url('image/bg9.jpg') repeat;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6f0;
+            overflow: hidden;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .menu-box {
+            background-color: #ff99c8;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(255, 102, 153, 0.7);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            animation: heartbeat 3s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 30px rgba(255, 102, 153, 0.7);
+            }
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .menu a {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 10px 0;
+            background-color: #ff6f91;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 102, 153, 0.3);
+        }
+
+        .menu a:hover {
+            background-color: #e0557b;
+            transform: translateY(-3px);
+        }
+
+        /* Spotify music box */
+        .music-box {
+            background-color: #ffccda;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 102, 153, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+            transition: background-color 0.3s;
+        }
+
+        .music-box:hover {
+            background-color: #ff99c8;
+        }
+
+        .music-box .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .music-box .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .music-box .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .music-box .title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff6699;
+            text-align: center;
+        }
+
+        /* Animated emojis */
+        .emoji {
+            position: absolute;
+            font-size: 25px;
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .emoji:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0.5s;
+        }
+
+        .emoji:nth-child(2) {
+            top: 20%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+
+        .emoji:nth-child(3) {
+            bottom: 10%;
+            left: 15%;
+            animation-delay: 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div class="menu-box">
+            <h2>Call Me</h2>
+            <div class="menu">
+                <a href="https://wa.me/6285602905834" target="_blank" rel="noopener noreferrer">☎️</a>
+            </div>
+            <a href="https://open.spotify.com/track/5aQdeAJNWX3XO0Zzf0X1DH?si=06b87fd219c145b6" target="_blank" rel="noopener noreferrer" class="music-box">
+                <div class="icon">
+                    <img src="image/first date.jpg" alt="Album Cover">
+                </div>
+                <div class="title">HAPPY BIRTHDAY</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Animated Emojis -->
+    <div class="emoji">❤️</div>
+    <div class="emoji">💖</div>
+    <div class="emoji">💌</div>
+</body>
+</html>

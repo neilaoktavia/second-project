@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <style>
+        /* Reset dan Font */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: url('image/bg7.jpg') no-repeat center center/cover;
+            background-size: cover;
+            color: #fff700; /* Warna kuning terang */
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fade-in 3s ease-in-out;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            text-shadow: 0px 0px 15px rgba(255, 255, 0, 0.8);
+            animation: siren 1s infinite alternate;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            animation: text-shake 1.5s infinite ease-in-out;
+        }
+
+        /* Strobe Light (Lampu Sirine) */
+        .strobe-light {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            animation: flash 1s infinite alternate;
+        }
+
+        .strobe-light div {
+            width: 40px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        .strobe-light .red {
+            background: red;
+        }
+
+        .strobe-light .blue {
+            background: blue;
+        }
+
+    
+
+        /* Menu Section */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .menu-item {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+            animation: fade-up 2s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .menu-item h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ffdf00;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .menu-item p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #fff700;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.9);
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Animasi */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-up {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        @keyframes siren {
+            0%, 100% {
+                text-shadow: 0 0 15px red, 0 0 30px blue;
+            }
+            50% {
+                text-shadow: 0 0 15px blue, 0 0 30px red;
+            }
+        }
+
+        @keyframes text-shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-3px);
+            }
+        }
+
+        .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #ff8c00;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease;
+      justify-content: center;
+    }
+
+    .back-button:hover {
+      background-color: #e07b00;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Lampu Sirine -->
+    <div class="strobe-light">
+        <div class="red"></div>
+        <div class="blue"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Our Memories</h1>
+            <p>Klik fotonya ya sayaaanggg!!!</p>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="menu">
+        <div class="menu-item">
+            <h2>First Photo</h2>
+            <a href="#modal1"><img src="image/firstfoto.jpg" alt="First photo of us"></a>
+            <p>22 Mei 2024</p>
+            <p>inget gaaa? ini foto pertama kita di pertemuan kedua hihii. pertemuan yang gapernah ia sangka-sangka. waktu itu ia lagi mam sama cece, tiba-tiba abang bilang mau nyusul, ia pikir abang becanda hihi, eh ternyata nyamperin beneran. terus abis itu kita jalan ke tamkot. terus pas pulang, abang tiba-tiba nembak ia...KAGETTT sama ga percayaaa. yang ada di pikiran ia waktu itu cuma gini "ni orang serius gasi, takutnya ntar pas ia terima, dia malah bilang ini boongan" tapi gatau kenapa mulut ia tiba tiba bilang "MAUU" dan tiba tiba yakin sama abang. ko bisa sih abang? bikin ia tiba tiba se yakin itu sama abang. HAYOOO punya pelet yaaaa??? XIXIXIXXI!!!</p>
+        </div>
+        <div class="menu-item">
+            <h2>First Chat</h2>
+            <a href="#modal2"><img src="image/Screenshot_2024-11-19-11-17-11-13_1c337646f29875672b5a61192b9010f9.jpg" alt="First chat screenshot"></a>
+            <p>10 Mei 2024</p>
+            <p>nah kalo ini chat pertama kita. ia kira siapaaa, eh ternyata pak pulici yang ketemu di depan pemda hihii takuttt. awalnya dikira chat sama pulici serius terus, gaada becanda becandanya, tapi ko ternyata ngga yaaa...pulici ini agak freak jugaaa wkwk. </p>
+        </div>
+        <div class="menu-item">
+            <h2>First Date</h2>
+            <a href="#modal3"><img src="image/first date.jpg" alt="First photo of us"></a>
+            <p>5 Juni 2024</p>
+            <P>ini ia anggap sebagai first date kita yaaa!! pertama kali kita beneran jalan berdua, dan pertama kali juga abang jemput ia ke kostan. biasanya kan ia sama cece terus hihii. Onedis yaa nama tempatnya? ia masi jaim juga waktu itu wkwk. terus abang pas pulangnya tiba tiba cuek gara gara ga peluk atau kenapa gitu ia lupaa hihii</P>
+        </div>
+        <div class="menu-item">
+            <h2>First Pap</h2>
+            <a href="#modal4"><img src="image/first pap.jpg" alt="First photo of us"></a>
+            <a href="#modal5"><img src="image/pap nela.jpg" alt="First photo of us"></a>
+            <p>23 Mei 2024/24 Mei 2024
+            <p>nah ini pap pertama kitaaa. abang pap pas abang gym, ia pap pas ia mau anter cece ke rumah temennya di ancaran. ia gatau abang masi inget ato ngga hihii.</p>
+            </p>
+        </div>
+        <div class="menu-item">
+            <h2>First Conflict</h2>
+            <a href="#modal6"><img src="image/konflik.jpg" alt="First photo of us"></a>
+            <p>1 Juni 2024</p>
+            <p>kalo ini konflik pertama setelah kita jadian. abang inget gaa? ini gara gara ia ga sengaja ngomong kasar waktu ituuu. sumpah sampe sekarang kepikiran terus kenapa ia tiba tiba ngomong gituuu. ternyata gini, di pikiran ia itu ia inget inget terus kalo ia ga boleh ngomong kasar di depan maupun di belakang abang. tapi karena kata katanya yang gaboleh ia ucapin itu ia inget inget biar ga di ucapin, justru pas ia ngomong malah ga sengaja ngucapin kata kata ituuu, makanya ia ga sadar. maaf ya sayang, ia ga sadar. ia masukkin ini di sini biar ini jadi pengingat ia terus biar ga di ulangi. HUHUHUUUUU MALUUUU;'(((((</p>
+            <p>koreksi ya sayang kalo ada yang salah. tadinya mo masukkin first kiss juga tapi gaada fotonyaaa HAHAHAHAHAHAHA</p>
+        </div>
+    </div>
+
+    <!-- Police Line -->
+    <div class="police-line"></div>
+
+    <!-- Modal Section -->
+    <div id="modal1" class="modal">
+        <a href="#" class="modal-close">✖</a>
+        <img src="image/firstfoto.jpg" alt="First photo of us">
+    </div>
+
+    <div id="modal2" class="modal">
+        <a href="#" class="modal-close">✖</a>
+        <img src="image/Screenshot_2024-11-19-11-17-11-13_1c337646f29875672b5a61192b9010f9.jpg" alt="First chat screenshot">
+    </div>
+
+    <div id="modal3" class="modal">
+        <a href="#" class="modal-close">✖</a>
+        <img src="image/first date.jpg" alt="First photo of us">
+    </div>
+
+    <div id="modal4" id="modal5" class="modal">
+        <a href="#" class="modal-close">✖</a>
+        <img src="image/first pap.jpg" alt="First photo of us">
+        <img src="image/pap nela.jpg" alt="First photo of us">
+    </div>
+
+    <div id="modal6" class="modal">
+        <a href="#" class="modal-close">✖</a>
+        <img src="image/konflik.jpg" alt="First photo of us">
+    </div>
+    <div>
+    <a href="index.html" class="back-button">Back Sayang</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tema Polisi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://images.unsplash.com/photo-1506748686212-c913153c7772?crop=entropy&cs=tinysrgb&fit=max&ixid=M3wzNjY3OXwwfDF8c2VhcmNofDJ8fGRvY3VtZW50fGVufDB8fHx8fDE2NjA0NjE3NjM&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center fixed;
+      background: url('image/bgpolice1.jpg') repeat;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      align-items: center;
+      overflow-y: auto;
+    }
+
+    .box {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 20px 40px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .box h1 {
+      font-size: 2rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .box p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      animation: fadeIn 2s ease-in-out 0.5s;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #ff8c00;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #e07b00;
+    }
+
+    /* Animasi mobil polisi */
+    .police-car {
+      position: absolute;
+      bottom: 10%;
+      left: -20%;
+      width: 100px;
+      height: 50px;
+      background: url('https://cdn-icons-png.flaticon.com/512/2210/2210143.png') no-repeat center / contain;
+      animation: drive 5s infinite linear;
+    }
+
+    @keyframes drive {
+      0% {
+        left: -20%;
+      }
+      100% {
+        left: 120%;
+      }
+    }
+
+    /* Lampu berkedip */
+    .police-light {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .light {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: blink 1s infinite;
+    }
+
+    .light.blue {
+      background: #007bff;
+      animation-delay: 0s;
+    }
+
+    .light.red {
+      background: #ff0000;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Helikopter berputar */
+    .helicopter {
+      position: absolute;
+      top: 15%;
+      right: -15%;
+      width: 120px;
+      height: 60px;
+      background: url('https://cdn-icons-png.flaticon.com/512/2138/2138167.png') no-repeat center / contain;
+      animation: fly 7s infinite linear;
+    }
+
+    @keyframes fly {
+      0% {
+        right: -15%;
+      }
+      100% {
+        right: 120%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Hallo, Abang! 🚔</h1>
+    <p>sayang ia bingung sebenernya mau nyampein apa. kalo cuma mau bilang makasih sama semangat doang itu kayanya terlalu singkat ya hehe. ia gabisa deskripsiin gimana senengnya ia bisa ketemu abang. intinya makasi banyak karena abang uda jadi salah satu bagian penting di hidup ia, makasi abang uda selalu bikin ia seneng. abang uda berhasil bikin ia jadi cewe terbahagiaaaa di dunia hihiiii (agak lebay yaa), at least ia pernah jadi wanita seberuntung itu dapetin abang. tetep semangat juga ya buat abang, abang uda hebat banget umur segini uda banyak pencapaian yang abang dapet. semangat buat semua impian abang selanjutnya. jangan pernah takut gagal yaaa, ia selalu support abang dari sini, apapun keputusan yang abang ambil, ia pasti dukung abang. Proud of you sayang! kalo orang lain bangga sama pacarnya, ia cuma bisa banggain mantan ia ini hihiiii, orang yang selalu terima ia apa adanya, yang selalu sabar hadapin sikap ia, selalu jadi tempat ia cerita dan tempat bersandar paling nyaman, orang yang selalu bikin ia happy terus dengan caranya sendiri, selalu bangga dan ikut seneng atas pencapaian ia sekecil apapun, dan orang yang selalu ngasih ia kasih sayang dan cintanya ke ia. intinya, hal-hal yang abang lakuin buat hidup abang, ga ada satupun yang ga bikin ia bangga... maaf ya kalo selama abang sama ia, ia banyak kurangnya, ia sering nyusahin abang, bikin abang marah, maaf ia belum bisa jadi yang abang mau, tapi ia tetep berusaha buat jadi yang terbaik ko buat abang.    ummm.....susah banget ya jalan kitaa;(( .....abang tau gaa??? ia takut banget sama kalimat "Setiap Orang Ada Masanya". nah, sekarang kalimat itu hampir relate sama ia. walaupun ia tau, gimanapun kita gaakan bisa bareng bareng lagi, tapi ia cuma pengen ngabisin banyak waktu sama abang sebelum semuanya bener-bener selesai. dan apapun keputusan yang abang ambil kemarin, ia hargai, ia terima. ia tetep sayang abang dan keluarga abang, ia tetep support dan ada disamping abang kalau abang butuh ia walaupun cuma buat ngobrol. no matter how far you go, you'll always have me, jangan lupain ia ya sayang. ia gaakan lupain abang, ia janji, you will always have a special place in my heart. tetep jadi orang baik dan rendah hati ya sayang, jangan pernah bosen buat memperbaiki diri, selalu utamain keluarga ya sayang, apapun yang terjadi. jaga kesehatan abang terus, jangan sampe sakit, ibadahnya juga dijaga ya sayang. semangat buat kejar yang abang mau, biar bisa bikin mami sama papi makin bangga sama abang, begitupun ia. Bahagia terus ya sayang, ia gaakan berhenti doain abang. sekali lagi Selamat Ulang Tahun ya, Sayangku! Keep being amazing, keep shining, dan jangan lupa kalo ia selalu ada di sini buat abang. I Love U to the Moon and Back!. Nanti kalo waktunya udah tepat, kita sama sama lagi yaaa... See U Sayang!</p>
+
+    <!-- Tombol Back dengan aksi JavaScript untuk kembali ke halaman sebelumnya -->
+    <a href="javascript:window.history.back();" class="back-button">Back Sayang</a>
+  </div>
+
+  <!-- Animasi mobil polisi -->
+  <div class="police-car"></div>
+
+  <!-- Animasi lampu polisi -->
+  <div class="police-light">
+    <div class="light blue"></div>
+    <div class="light red"></div>
+  </div>
+
+  <!-- Animasi helikopter -->
+  <div class="helicopter"></div>
+</body>
+</html>
